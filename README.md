@@ -10,6 +10,8 @@ Build a deep learning workstation from scratch from hardware to software.
 Disclaimer: This document records my own experience and lessons learnt in building a workstation for deep learning. However, there is no gurantee on saftey or success of the construction. It's your own responsibility to maintain safety during the process. Please refer to professional IT service when you have question or meet trouble.
 
 ## Build a GPU Workstation
+Feel free to skip this section if you already have a GPU machine or plan to buy a pre-assembled one.
+
 ### Pick and purchase parts
 In general, you need to have motherboard, CPU (including CPU fan), memory cards, power supply unit (PSU), hard drive (+SSD), case and graphics cards (GPUs). A good place to pick and compare computer parts is <a href="https://pcpartpicker.com" target="_blank">PC Part Picker</a>. The website will help you check compatibility of components and provides price comparisons from multiple providers, which is really helpful.
 
