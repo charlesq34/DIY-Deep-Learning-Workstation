@@ -2,14 +2,15 @@
 Build a deep learning workstation from scratch from hardware to software.
 
 ### Contents
-1. [Build a GPU Workstation](#build-a-gpu-workstation)
-2. [Install Ubuntu](#install-ubuntu)
-3. [Install CUDA and cuDNN](#install-cuda-and-cudnn)
-4. [Install TensorFlow](#install-tensorflow)
+1. [Build a GPU Workstation](#1-build-a-gpu-workstation)
+2. [Install Ubuntu](#2-install-ubuntu)
+3. [Install CUDA and cuDNN](#3-install-cuda-and-cudnn)
+4. [Install TensorFlow](#4-install-tensorflow)
+5. [Others](#5-others)
 
 Disclaimer: This document records my own experience and lessons learnt in building a workstation for deep learning. However, there is no gurantee on saftey or success of the construction. It's your own responsibility to maintain safety during the process. Please refer to professional IT service when you have question or meet trouble.
 
-## Build a GPU Workstation
+## 1. Build a GPU Workstation
 Feel free to skip this section if you already have a GPU machine or plan to buy a pre-assembled one.
 
 ### Pick and purchase parts
@@ -32,14 +33,46 @@ A brief guideline on the assembling steps are as follows.
 
 Tip:  if you find it extremely difficult to connect some cable, you are probably doing it in the wrong way!
 
-## Install Ubuntu
+## 2. Install Ubuntu
+I assume at this step, you already have a functional machine connected to display, keyboard and mouse.
 
 ### Create a bootable USB stick on Ubuntu
 Assuming you or your friend already have a computer, then you can prepare a USB stick for OS installation following this guideline: <a href="https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu" target="_blank">Create A USB Stick on Ubuntu</a> or equivalents for <a href="https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows" target="_blank">Windows</a> and <a href="https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-macos" target="_blank">macOS</a>.
 
 ### Install Ubuntu 16.04 LTS
+Insert the disk to the machine's USB stick. Start the machine and it should automatically enter a window for Ubuntu installation. If your system has a preinstalled OS, you need to modify BIOS boot order to set USB stick as first priority. The installation process should be very fast (less than 10 minutes for my case) and simple.
 
+## 3. Install CUDA and cuDNN
+This step will require Internet connection.
 
-## Install CUDA and cuDNN
+###Preparation
+``` bash
+sudo apt-get install aptitude
+sudo apt-get install \
+  freeglut3-dev \
+  g++-4.8 \
+  gcc-4.8 \
+  libglu1-mesa-dev \ 
+  libx11-dev \
+  libxi-dev \
+  libxmu-dev \
+  nvidia-modprobe \
+  python-dev \
+  python-pip \
+  python-virtualenv \
+  vim
+```
 
-## Install TensorFlow
+## 4. Install TensorFlow
+Follow TensorFlow official page for installation: https://www.tensorflow.org/install/
+Or install whatever deep learning frameworks that you prefer :)
+
+What I did to install TF1.1 with GPU and Python 3.5 was as follows:
+```bash
+export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.1.0-cp35-cp35m-linux_x86_64.whl
+sudo pip install --upgrade $TF_BINARY_URL
+```
+
+## 5. Others
+### Mount hard drive
+### Set up SSH connection
