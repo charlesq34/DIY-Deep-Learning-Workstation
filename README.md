@@ -1,5 +1,5 @@
 # DIY-Deep-Learning-Workstation
-Build a deep learning workstation from scratch.
+Build a deep learning workstation from scratch. While this document is written for Ubuntu 16.04 with TensorFlow, most steps should also apply to other Ubuntu versions such as 14.04 and other deep leanring frameworks. Have fun DIY-ing!
 
 ### Contents
 1. [Build a GPU Workstation](#1-build-a-gpu-workstation)
@@ -70,12 +70,12 @@ sudo apt-get install \
 
 Download CUDA installation file: https://developer.nvidia.com/cuda-downloads
 
-Choose Linux -> x86_64 -> Ubuntu -> 16.04 -> deb (local) 
+Choose Linux -> x86_64 -> Ubuntu -> 16.04 -> deb (local)  -> Download
 
 Install CUDA in terminal (use the specific .deb file you've downloaded):
 ``` bash
 cd ~/Downloads
-sudo dpkg -i cuda-repo-ubuntu1404-8-0-local_8.0.44-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb
 sudo apt-get update
 sudo apt-get install cuda
 ```
@@ -89,8 +89,8 @@ The NVIDIA CUDA® Deep Neural Network library (cuDNN) is aGPU-accelerated librar
 Register an (free) acount on NVIDIA website and login to download the latest cuDNN library: https://developer.nvidia.com/cudnn
 
 Choose the specific version of cuDNN (denpending on support of your prefered deep learning framework)
-`Download cuDNN v5.1 (Jan 20, 2017), for CUDA 8.0`
-`cuDNN v5.1 Library for Linux`
+
+Choose `Download cuDNN v5.1 (Jan 20, 2017), for CUDA 8.0` -> `cuDNN v5.1 Library for Linux`
 
 Install cuDNN (by copying files :) in terminal:
 ```bash
