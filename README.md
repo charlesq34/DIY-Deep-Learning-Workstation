@@ -64,6 +64,52 @@ sudo apt-get install \
   vim
 ```
 
+
+### Install CUDA
+
+Download CUDA installation file: https://developer.nvidia.com/cuda-downloads
+
+Choose Linux -> x86_64 -> Ubuntu -> 16.04 -> deb (local) 
+
+Install CUDA in terminal (use the specific .deb file you've downloaded):
+``` bash
+cd ~/Downloads
+sudo dpkg -i cuda-repo-ubuntu1404-8-0-local_8.0.44-1_amd64.deb
+sudo apt-get update
+sudo apt-get install cuda
+```
+
+Restart the PC to activate CUDA driver. Now your screen resolution should be automatically changed to highest resolution for the display!
+
+### Install cuDNN
+
+The NVIDIA CUDA® Deep Neural Network library (cuDNN) is aGPU-accelerated library of primitives for deep neural networks with optimizations for convolutions etc.
+
+Register an (free) acount on NVIDIA website and login to download the latest cuDNN library: https://developer.nvidia.com/cudnn
+
+Choose the specific version of cuDNN (denpending on support of your prefered deep learning framework)
+`Download cuDNN v5.1 (Jan 20, 2017), for CUDA 8.0`
+`cuDNN v5.1 Library for Linux`
+
+Install cuDNN (by copying files :) in terminal:
+```bash
+cd ~/Downloads
+tar xvf cudnn-8.0-linux-x64-v5.1.tgz
+cd cuda
+sudo cp lib64/* /usr/local/cuda/lib64/
+sudo cp include/cudnn.h /usr/local/cuda/include/
+sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
+```
+
+### (Optional) Update your .bashrc
+
+Add the following lines to your `~/.bashrc` file (you can open it by `gedit ~/.bashrc` in terminal)
+```bash
+export PATH=/usr/local/cuda/bin:$PATH
+export MANPATH=/usr/local/cuda/man:$MANPATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+```
+
 ## 4. Install TensorFlow
 Follow TensorFlow official page for installation: https://www.tensorflow.org/install/
 Or install whatever deep learning frameworks that you prefer :)
