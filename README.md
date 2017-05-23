@@ -85,7 +85,7 @@ sudo apt-get update
 sudo apt-get install cuda
 ```
 
-Restart the PC to activate CUDA driver. Now your screen resolution should be automatically changed to highest resolution for the display!
+Restart the computer to activate CUDA driver. Now your screen resolution should be automatically changed to highest resolution for the display!
 
 ### Install cuDNN
 
