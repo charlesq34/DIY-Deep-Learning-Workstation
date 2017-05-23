@@ -1,5 +1,5 @@
 # DIY-Deep-Learning-Workstation
-Build a deep learning workstation from scratch from hardware to software.
+Build a deep learning workstation from scratch.
 
 ### Contents
 1. [Build a GPU Workstation](#1-build-a-gpu-workstation)
