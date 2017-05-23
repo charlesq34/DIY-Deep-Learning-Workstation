@@ -115,7 +115,7 @@ export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 Follow TensorFlow official page for installation: https://www.tensorflow.org/install/
 Or install whatever deep learning frameworks that you prefer :)
 
-What I did to install TF1.1 with GPU and Python 3.5 was as follows:
+For example to install TF1.1 with GPU and Python 3.5:
 ```bash
 export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.1.0-cp35-cp35m-linux_x86_64.whl
 sudo pip install --upgrade $TF_BINARY_URL
