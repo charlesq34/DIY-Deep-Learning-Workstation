@@ -183,3 +183,32 @@ Add the following line at the end:
 
 
 ### Set up SSH connection
+
+Server side, install SSH server:
+```bash
+sudo apt-get install openssh-server
+```
+
+Edit SSH configuration to whitelist users:
+```bash
+sudo vim /etc/ssh/sshd_config
+```
+Change root login permission line to: PermitRootLogin no
+
+Add allow users: AllowUsers your_username
+
+Then restart SSH server:
+```bash
+sudo /etc/init.d/ssh restart
+sudo ufw allow 22
+```
+
+Client side, to connect with the workstation, you need to firstly know the server's IP (or hostname if it has one). Use `ifconfig -a` on the server to check IP address (look for that in `eth0`).
+
+Client side (Mac OS), you need to whitelist the server IP in `/etc/hosts`:
+```bash
+sudo vim /etc/hosts
+```
+
+Add line
+`<server IP> <server hostname>`
