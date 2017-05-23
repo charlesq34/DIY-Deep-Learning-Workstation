@@ -53,8 +53,9 @@ This and the following steps require Internet connection.
 
 Install some useful packages in terminal:
 ``` bash
-sudo apt-get install aptitude
+sudo apt-get update
 sudo apt-get install \
+  aptitude \
   freeglut3-dev \
   g++-4.8 \
   gcc-4.8 \
