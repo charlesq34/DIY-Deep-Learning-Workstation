@@ -18,7 +18,7 @@ Feel free to skip this section if you already have a GPU machine or plan to buy 
 ### Pick and purchase parts
 In general, you need to have motherboard, CPU (including CPU fan), memory cards, power supply unit (PSU), hard drive (+SSD), case and graphics cards (GPUs). A good place to pick and compare computer parts is <a href="https://pcpartpicker.com" target="_blank">PC Part Picker</a>. The website will help you check compatibility of components and provides price comparisons from multiple providers, which is really helpful.
 
-You can find my part list <a href="https://pcpartpicker.com/list/LbT7Fd" target="_blank">HERE</a>. The parts I bought are not completely the same as the list because, for convenience, I just bought all parts from <a href="http://www.frys.com" target="_blank">Frys</a> and choose parts depending on their availability. But at least you could get a sense of how much it costs and what parts are necessary. For my case it costs around $2.2k (May 2017) in total for a machine with two GTX 1080 GPUs, 32GB memory, 500GB SSD + 4TB hard drive with a quad-core i5 CPU and 850W power. Note that this spec is optimized for cost with strong constraint to preserve two GPUs. CPU, SSD and memory are versions that are far from the best.
+You can find my part list <a href="https://pcpartpicker.com/list/LbT7Fd" target="_blank">HERE</a>. The parts I bought are not completely the same as the list because, for convenience, I just bought all parts from <a href="http://www.frys.com" target="_blank">Frys</a> and choose parts depending on their availability. But at least you could get a sense of how much it costs and what parts are necessary. For my case it costs around $2.2k (May 2017) in total for a machine with two GTX 1080 GPUs, 32GB memory, 500GB SSD + 4TB hard drive with a quad-core i5 CPU and 850W power. Note that this spec is optimized for cost with strong constraint to preserve two GPUs. CPU, SSD and memory are compromised.
 
 ### Assemble the machine
 Read the instructions of motherboard, power and case *carefully* before installation. There are also plenty of videos online on how to assemble a machine, which might be helpful if you are doing it the first time.
@@ -120,6 +120,12 @@ export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 source ~/.bashrc
 ```
 
+To check the installation, print some GPU and driver information by:
+```bash
+nvidia-smi
+nvcc --version
+```
+
 ## 4. Install TensorFlow
 Follow TensorFlow official page for installation: https://www.tensorflow.org/install/
 Or install whatever deep learning frameworks that you prefer :)
@@ -132,4 +138,48 @@ sudo pip install --upgrade $TF_BINARY_URL
 
 ## 5. Others
 ### Mount hard drive
+
+I used SSD as my boot dist and followed <a href="https://www.cyberciti.biz/tips/fdisk-unable-to-create-partition-greater-2tb.html" target="_blank">THIS</a> document to mount the hard drive.
+
+To check the disk status:
+```bash
+sudo fdisk -l /dev/sdb
+```
+
+To create a partition start GNU parted as follows (assuming the hard drive is /dev/sdb):
+```bash
+sudo parted /dev/sdb
+```
+
+Now inside command line interface of the parted tool (set unit to TB and set a partition from 0TB to 4TB, then use `print` to check partition and use `quit` to save & quit the parted tool):
+```bash
+(parted) unit TB
+(parted) mkpart primary 0 4
+(parted) print
+(parted) quit
+```
+
+Then use mkfs.ext4 command to format the file system, enter:
+``` bash
+sudo mkfs.ext4 /dev/sdb1
+```
+
+Type the following commands to mount /dev/sdb1, enter:
+``` bash
+sudo mkdir /data
+sudo mount /dev/sdb1 /data
+```
+
+You can use `df -H` to check current disk info.
+
+To kee the mount after reboot, add the mouting setup to `/etc/fstab`:
+```bash
+sudo vim /etc/fstab
+```
+
+Add the following line at the end:
+
+`/dev/sdb1       /data   ext4    defaults        0       1`
+
+
 ### Set up SSH connection
