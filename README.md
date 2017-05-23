@@ -1,5 +1,5 @@
 # DIY-Deep-Learning-Workstation
-Build a deep learning workstation from scratch. While this document is written for Ubuntu 16.04 with TensorFlow, most steps should also apply to other Ubuntu versions such as 14.04 and other deep leanring frameworks.
+Build a deep learning workstation from scratch. While this document is written for Ubuntu 14.04 with TensorFlow, most steps should also apply to other Ubuntu versions and deep leanring frameworks.
 
 Have fun DIY-ing!
 
@@ -41,7 +41,9 @@ I assume at this step, you already have a functional machine connected to displa
 ### Create a bootable USB stick on Ubuntu
 Assuming you or your friend already have a computer, then you can prepare a USB stick for OS installation following this guideline: <a href="https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu" target="_blank">Create A USB Stick on Ubuntu</a> or equivalents for <a href="https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows" target="_blank">Windows</a> and <a href="https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-macos" target="_blank">macOS</a>.
 
-### Install Ubuntu 16.04 LTS
+The 14.04 ISO file (ubuntu-14.04.5-desktop-amd64.iso ) can be found here: http://releases.ubuntu.com/14.04/
+
+### Install Ubuntu 14.04 LTS
 Insert the disk to the machine's USB stick. Start the machine and it should automatically enter a window for Ubuntu installation. If your system has a preinstalled OS, you need to modify BIOS boot order to set USB stick as first priority. The installation process should be very fast (less than 10 minutes for my case) and simple.
 
 ## 3. Install CUDA and cuDNN
@@ -72,12 +74,12 @@ sudo apt-get install \
 
 Download CUDA installation file: https://developer.nvidia.com/cuda-downloads
 
-Choose Linux -> x86_64 -> Ubuntu -> 16.04 -> deb (local)  -> Download
+Choose Linux -> x86_64 -> Ubuntu -> 14.04 -> deb (local)  -> Download
 
 Install CUDA in terminal (use the specific .deb file you've downloaded):
 ``` bash
 cd ~/Downloads
-sudo dpkg -i cuda-repo-ubuntu1604-8-0-local-ga2_8.0.61-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1404-8-0-local-ga2_8.0.61-1_amd64.deb
 sudo apt-get update
 sudo apt-get install cuda
 ```
@@ -117,9 +119,9 @@ export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 Follow TensorFlow official page for installation: https://www.tensorflow.org/install/
 Or install whatever deep learning frameworks that you prefer :)
 
-For example to install TF1.1 with GPU and Python 3.5:
+For example to install TF1.1 with GPU and Python 2.7:
 ```bash
-export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.1.0-cp35-cp35m-linux_x86_64.whl
+export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/gpu/tensorflow_gpu-1.1.0-cp27-none-linux_x86_64.whl
 sudo pip install --upgrade $TF_BINARY_URL
 ```
 
