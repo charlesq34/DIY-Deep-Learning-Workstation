@@ -43,10 +43,11 @@ Assuming you or your friend already have a computer, then you can prepare a USB 
 Insert the disk to the machine's USB stick. Start the machine and it should automatically enter a window for Ubuntu installation. If your system has a preinstalled OS, you need to modify BIOS boot order to set USB stick as first priority. The installation process should be very fast (less than 10 minutes for my case) and simple.
 
 ## 3. Install CUDA and cuDNN
-This and the following steps are require Internet connection.
+This and the following steps require Internet connection.
 
 ### Preparation
 
+Install some useful packages in terminal:
 ``` bash
 sudo apt-get install aptitude
 sudo apt-get install \
