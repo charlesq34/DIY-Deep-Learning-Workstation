@@ -8,7 +8,7 @@ Build a deep learning workstation from scratch from hardware to software.
 4. [Install TensorFlow](#4-install-tensorflow)
 5. [Others](#5-others)
 
-Disclaimer: This document records my own experience and lessons learnt in building a workstation for deep learning. However, there is no gurantee on saftey or success of the construction. It's your own responsibility to maintain safety during the process. Please refer to professional IT service when you have question or meet trouble.
+**Disclaimer:** This document records my own experience and lessons learnt in building a workstation for deep learning. However, there is no gurantee on saftey or success of the construction. It's your own responsibility to maintain safety during the process. Please refer to professional IT service when you have question or meet trouble.
 
 ## 1. Build a GPU Workstation
 Feel free to skip this section if you already have a GPU machine or plan to buy a pre-assembled one.
@@ -43,9 +43,10 @@ Assuming you or your friend already have a computer, then you can prepare a USB 
 Insert the disk to the machine's USB stick. Start the machine and it should automatically enter a window for Ubuntu installation. If your system has a preinstalled OS, you need to modify BIOS boot order to set USB stick as first priority. The installation process should be very fast (less than 10 minutes for my case) and simple.
 
 ## 3. Install CUDA and cuDNN
-This step will require Internet connection.
+This and the following steps are require Internet connection.
 
-###Preparation
+### Preparation
+
 ``` bash
 sudo apt-get install aptitude
 sudo apt-get install \
