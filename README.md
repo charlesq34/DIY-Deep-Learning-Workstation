@@ -1,5 +1,7 @@
 # DIY-Deep-Learning-Workstation
-Build a deep learning workstation from scratch. While this document is written for Ubuntu 16.04 with TensorFlow, most steps should also apply to other Ubuntu versions such as 14.04 and other deep leanring frameworks. Have fun DIY-ing!
+Build a deep learning workstation from scratch. While this document is written for Ubuntu 16.04 with TensorFlow, most steps should also apply to other Ubuntu versions such as 14.04 and other deep leanring frameworks.
+
+Have fun DIY-ing!
 
 ### Contents
 1. [Build a GPU Workstation](#1-build-a-gpu-workstation)
