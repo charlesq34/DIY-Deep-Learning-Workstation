@@ -18,7 +18,9 @@ In general, you need to have motherboard, CPU (including CPU fan), memory cards,
 You can find my part list <a href="https://pcpartpicker.com/list/LbT7Fd" target="_blank">HERE</a>. The parts I bought are not completely the same as the list because, for convenience, I just bought all parts from <a href="http://www.frys.com" target="_blank">Frys</a> and choose parts depending on their availability. But at least you could get a sense of how much it costs and what parts are necessary. For my case it costs around $2.2k (May 2017) in total for a machine with two GTX 1080 GPUs, 32GB memory, 500GB SSD + 4TB hard drive with a quad-core i5 CPU and 850W power. Note that this spec is optimized for cost with strong constraint to preserve two GPUs. CPU, SSD and memory are versions that are far from the best.
 
 ### Assemble the machine
-Read the instructions of motherboard, power and case *carefully* before installation. A brief guideline on the steps are as follows.
+Read the instructions of motherboard, power and case *carefully* before installation. There are also plenty of videos online on how to assemble a machine, which might be helpful if you are doing it the first time.
+
+A brief guideline on the assembling steps are as follows.
 1. Install CPU on motherboard, install CPU fan, make sure the CPU fan stays solid, connect fan power cable to motherboard
 2. Install memory card to motherboard
 3. Connect cables to PSU, motherboard power (2 of them one for CPU, one for motherboard general, read the text on the cable, don’t misplace the PCI power cables!), harddrive power (one for HD, one for SSD), GPU power (2 cables), put PSU into the case
@@ -33,7 +35,7 @@ Tip:  if you find it extremely difficult to connect some cable, you are probably
 ## Install Ubuntu
 
 ### Create a bootable USB stick on Ubuntu
-https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu
+Assuming you or your friend already have a computer, then you can prepare a USB stick for OS installation following this guideline: <a href="https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-ubuntu" target="_blank">Create A USB Stick on Ubuntu</a> or equivalents for <a href="https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-windows" target="_blank">Windows</a> and <a href="https://www.ubuntu.com/download/desktop/create-a-usb-stick-on-macos" target="_blank">macOS</a>.
 
 ### Install Ubuntu 16.04 LTS
 
