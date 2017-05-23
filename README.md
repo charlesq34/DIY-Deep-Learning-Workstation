@@ -107,13 +107,17 @@ sudo cp include/cudnn.h /usr/local/cuda/include/
 sudo chmod a+r /usr/local/cuda/lib64/libcudnn*
 ```
 
-### (Optional) Update your .bashrc
+### Update your .bashrc
 
 Add the following lines to your `~/.bashrc` file (you can open it by `gedit ~/.bashrc` in terminal)
 ```bash
 export PATH=/usr/local/cuda/bin:$PATH
 export MANPATH=/usr/local/cuda/man:$MANPATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+```
+
+```bash
+source ~/.bashrc
 ```
 
 ## 4. Install TensorFlow
