@@ -59,7 +59,7 @@ sudo apt-get install \
   freeglut3-dev \
   g++-4.8 \
   gcc-4.8 \
-  libglu1-mesa-dev \ 
+  libglu1-mesa-dev \
   libx11-dev \
   libxi-dev \
   libxmu-dev \
